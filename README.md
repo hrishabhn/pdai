@@ -1,6 +1,6 @@
 # Travel Guide
 
-A Streamlit application that displays list of places I've saved during my travels.
+A Streamlit application that displays list of places I've saved during my travels. Access the app [here](https://places-hn.streamlit.app/).
 
 ## Overview
 
