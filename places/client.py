@@ -6,7 +6,7 @@ import pandas as pd
 @st.cache_data(ttl=120)
 def get_data():
     # load data
-    df = pd.read_json('https://places-hn.vercel.app/api')
+    df = pd.read_json(st.secrets['PLACES_ENDPOINT'])
 
     # preprocessing
     df['city'] = df['city'].apply(lambda x: x['name'] if x else None)
