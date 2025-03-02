@@ -10,7 +10,7 @@ st.set_page_config(
 # home page
 def home():
     st.write('# Travel Guide')
-    st.write('A list of the best places that I have encountered on my travels, curated by me. To learn more, visit the [GitHub repository](https://github.com/hrishabhn/pdai/places).')
+    st.write('A list of the best places that I have encountered on my travels, curated by me. To learn more, visit the [GitHub repository](https://github.com/hrishabhn/pdai/tree/main/places).')
 
 
 # navigation
