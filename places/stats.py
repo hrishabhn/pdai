@@ -6,9 +6,12 @@ from get_data import get_data
 st.write('# Stats')
 st.write('This page shows some statistics about the places.')
 
+top_only = st.toggle('Top Only')
 
 # get data
 df = get_data()
+if top_only:
+    df = df[df['top']]
 
 
 # create chart data
