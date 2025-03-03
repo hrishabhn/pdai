@@ -1,5 +1,5 @@
 import streamlit as st
-from client import get_data
+from get_data import get_data
 
 
 # page header

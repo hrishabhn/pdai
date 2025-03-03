@@ -1,9 +1,9 @@
 import streamlit as st
-from client import get_data
-import pandas as pd
+from get_data import get_data
+
 
 # page header
-st.write('## Stats')
+st.write('# Stats')
 st.write('This page shows some statistics about the places.')
 
 
