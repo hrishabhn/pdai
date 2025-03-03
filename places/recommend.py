@@ -1,6 +1,7 @@
 import streamlit as st
 from get_data import get_data
-from get_recommendation import get_recommendation, RecommendationRequest
+from get_recommendation import get_recommendation
+from models import RecommendationRequest
 from openai import AuthenticationError
 
 
@@ -28,6 +29,9 @@ if api_key:
         'gpt-4o': 'GPT-4o',
     }
 
+    user_use_database = st.toggle('Use Database')
+    if user_use_database:
+        user_top_only = st.toggle('Top Only')
     user_model = st.segmented_control(
         'Model',
         ['gpt-4o-mini', 'gpt-4o'],
@@ -46,6 +50,8 @@ if api_key:
                 recommendation = get_recommendation(RecommendationRequest(
                     api_key=api_key,
                     model=user_model,
+                    use_database=user_use_database,
+                    top_only=user_top_only,
                     city=user_city,
                     type=user_type,
                     prompt=user_prompt,

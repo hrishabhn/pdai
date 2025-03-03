@@ -31,8 +31,10 @@ streamlit run places/app.py
 
 - All application code is located in the `places` folder
 
+- `models.py`: Pydantic models for data validation
 - `get_data.py`: API client for data fetching and preprocessing
 - `get_recommendation.py`: API client for AI recommendation
+- `get_taste.py`: API client for user preferences
 - `app.py`: Application entry point with Streamlit configuration, navigation, and Home page
 - `places.py`: Places page
 - `stats.py`: Stats page
