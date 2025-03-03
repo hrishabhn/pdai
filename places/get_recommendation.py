@@ -30,10 +30,9 @@ def get_recommendation(request: RecommendationRequest) -> RecommendationResponse
         model=request.model,
         messages=[
             # system message
-            {"role": "system", "content": '\n'.join([
-                'You are a travel guide concierge. Your task is to assist users by providing personalized recommendations based on their preferences. Users will specify their preferences, which include the city, type of place, and any additional information they wish to share. Keep in mind that users might use abbreviated or informal city names, so ensure you return the full city name in your response. If the user specifies an overly specific type of place, offer a more general category in your response while including the specific type as a tag. Tags should be capitalized (first letter of each word). Ensure all recommendations reflect real-world options.',
-            ])},
-            {"role": "user", "content": '\n'.join([
+            {'role': 'system', 'content': 'You are a travel guide concierge. Your task is to assist users by providing personalized recommendations based on their preferences. Users will specify their preferences, which include the city, type of place, and any additional information they wish to share. Keep in mind that users might use abbreviated or informal city names, so ensure you return the full city name in your response. If the user specifies an overly specific type of place, offer a more general category in your response while including the specific type as a tag. Tags should be capitalized (first letter of each word). Ensure all recommendations reflect real-world options.'},
+            # user message
+            {'role': 'user', 'content': '\n'.join([
                 f'City: {request.city}',
                 f'Type: {request.type}',
                 f'Additional Information: {request.prompt}' if request.prompt else '',
