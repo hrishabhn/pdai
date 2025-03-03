@@ -28,16 +28,27 @@ if api_key:
         'gpt-4o-mini': 'GPT-4o Mini',
         'gpt-4o': 'GPT-4o',
     }
+    db_map = {
+        'none': 'None',
+        'all': 'All',
+        'top': 'Top Only',
+    }
 
-    user_use_database = st.toggle('Use Database')
-    if user_use_database:
-        user_top_only = st.toggle('Top Only')
+    user_db = st.segmented_control(
+        'Use Database',
+        ['none', 'all', 'top'],
+        format_func=lambda db: db_map[db],
+        selection_mode='single',
+        default='none',
+        help='Use the curated list of places to get recommendations.',
+    )
     user_model = st.segmented_control(
         'Model',
         ['gpt-4o-mini', 'gpt-4o'],
         format_func=lambda model: model_map[model],
         selection_mode='single',
-        default='gpt-4o-mini'
+        default='gpt-4o-mini',
+        help='Select the model to use for generating recommendations. The GPT-4o Mini model is faster and cheaper, while the GPT-4o model is more powerful and accurate.',
     )
     user_city = st.text_input('City')
     user_type = st.text_input('Type')
@@ -50,8 +61,7 @@ if api_key:
                 recommendation = get_recommendation(RecommendationRequest(
                     api_key=api_key,
                     model=user_model,
-                    use_database=user_use_database,
-                    top_only=user_top_only,
+                    db=user_db,
                     city=user_city,
                     type=user_type,
                     prompt=user_prompt,

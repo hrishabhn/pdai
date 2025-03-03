@@ -10,8 +10,7 @@ Model = Literal['gpt-4o-mini', 'gpt-4o']
 class RecommendationRequest(BaseModel):
     api_key: str
     model: Model
-    use_database: bool
-    top_only: bool
+    db: Literal['none', 'all', 'top']
     city: str
     type: str
     prompt: str

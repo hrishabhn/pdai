@@ -14,8 +14,8 @@ def get_messages(request: RecommendationRequest):
     })
 
     # taste message
-    if request.use_database:
-        taste = get_taste(TasteRequest(api_key=request.api_key, model=request.model, top_only=request.top_only))
+    if request.db != 'none':
+        taste = get_taste(TasteRequest(api_key=request.api_key, model=request.model, top_only=request.db == 'top'))
         messages.append({'role': 'system', 'content': taste})
 
     # user message
