@@ -33,6 +33,7 @@ streamlit run places/app.py
 - **Places**: Main view with filters and multiple display formats
 - **Stats**: Statistical visualisations of places data
 - **Recommend**: AI recommendations for new places to visit
+- **About**: Information about the application
 
 ## Project Structure
 
@@ -46,6 +47,7 @@ streamlit run places/app.py
 - [`places.py`](places.py): Places page
 - [`stats.py`](stats.py): Stats page
 - [`recommend.py`](recommend.py): Recommend page
+- [`about.py`](about.py): About page
 
 ## Data
 

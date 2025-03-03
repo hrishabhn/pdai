@@ -20,5 +20,6 @@ pg = st.navigation({
         st.Page('places.py', title='Places', icon=':material/location_on:'),
         st.Page('stats.py', title='Stats', icon=':material/query_stats:'),
         st.Page('recommend.py', title='Recommend', icon=':material/lightbulb:'),
+        st.Page('about.py', title='About', icon=':material/info:'),
     ]})
 pg.run()
