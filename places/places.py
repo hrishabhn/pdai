@@ -50,8 +50,8 @@ with tab_list:
     st.write('## List View')
     for i, row in df.iterrows():
         st.divider()
-        if row['cover']:
-            st.image(row['cover'], use_container_width=True)
+        if row['image']:
+            st.image(row['image'], use_container_width=True)
         st.write(f'### {row['name']}')
 
         info = []
@@ -77,12 +77,12 @@ with tab_list:
 with tab_table:
     st.write('## Table View')
     st.dataframe(
-        df[['name', 'top', 'city', 'cover', 'type', 'tags', 'description', 'maps_link']],
+        df[['name', 'top', 'city', 'image', 'type', 'tags', 'description', 'maps_link']],
         column_config={
             'name': 'Name',
             'top': 'Top',
             'city': st.column_config.ListColumn('City'),
-            'cover': st.column_config.ImageColumn('Cover'),
+            'image': st.column_config.ImageColumn('Image'),
             'type': st.column_config.ListColumn('Type'),
             'tags': st.column_config.ListColumn('Tags'),
             'description': 'Description',
