@@ -2,11 +2,9 @@ import './globals.css'
 import {Providers} from './providers'
 
 import type {Metadata, Viewport} from 'next'
-import {Karla, Roboto_Slab} from 'next/font/google'
 import colors from 'tailwindcss/colors'
 
-const karla = Karla({subsets: ['latin']})
-const robotoSlab = Roboto_Slab({subsets: ['latin']})
+import {karla, robotoSlab} from '@/components/layout'
 
 const title = 'Travel Guide'
 const description = 'A curated list of the best places that I have encountered on my travels.'
@@ -32,8 +30,8 @@ export default function RootLayout({
     return (
         <html lang="en">
             <Providers>
-                <body className={`${karla.className} flex min-h-screen w-full flex-col bg-layer-0 text-black antialiased dark:bg-layer-0-dark dark:text-white`}>
-                    <div className={`${robotoSlab.className} dark:bg-accent-dark bg-accent px-4 pt-8 text-white sm:px-10`}>
+                <body className={`${karla.className} flex min-h-screen w-full flex-col bg-layer-0 text-black antialiased dark:text-white`}>
+                    <div className={`${robotoSlab.className} bg-accent px-4 pt-8 text-white sm:px-10`}>
                         <p className="text-2xl font-semibold">{title}</p>
                         <p className="text-sm font-medium opacity-60">{description}</p>
                     </div>

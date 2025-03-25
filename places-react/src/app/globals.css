@@ -9,7 +9,7 @@
     --line: var(--color-g-200);
 }
 
-@media (prefers-color-scheme: dark) {
+@variant dark {
     :root {
         --accent: var(--color-red-700);
 
@@ -55,4 +55,11 @@
 * {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+@layer base {
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
 }

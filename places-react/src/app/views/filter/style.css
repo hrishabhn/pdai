@@ -1,0 +1,11 @@
+@import '../../globals.css';
+
+:root {
+    --px: theme('padding.4');
+}
+
+@variant sm {
+    :root {
+        --px: theme('padding.10');
+    }
+}
